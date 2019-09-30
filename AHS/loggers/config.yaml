@@ -1,0 +1,50 @@
+version: 1
+formatters:
+  brief:
+    format: "%(asctime)s - %(message)s"
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  withline:
+    format: "%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s"
+  origin:
+    format: "%(message)s"
+handlers:
+  console:
+    class : logging.StreamHandler
+    formatter: brief
+    level   : DEBUG
+    stream  : ext://sys.stdout
+  file:
+    class : logging.FileHandler
+    formatter: simple
+    level: DEBUG
+    filename: log/debug.log
+    encoding: utf8
+  error:
+    class: logging.handlers.RotatingFileHandler
+    level: ERROR
+    formatter: simple
+    filename: log/output.log
+    maxBytes: 10485760
+    backupCount: 20
+    encoding: utf8
+
+  article_console:
+    class: logging.StreamHandler
+    formatter: withline
+    level: DEBUG
+    stream: ext://sys.stdout
+
+loggers:
+  core:
+    level: DEBUG
+    handlers: [console, file, error]
+    propagate: False
+  article:
+    level: DEBUG
+    handlers: [article_console]
+    propagate: False
+
+root:
+  level: DEBUG
+  handlers: [console, file]    # 感觉不要在root下进行logging的操作比较好(root下的信息好像无法关闭)

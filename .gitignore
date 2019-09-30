@@ -1,0 +1,9 @@
+#Pycharm
+.idea
+__pycache__
+
+#log
+AHS/log/*
+
+# python objects and libs
+*.pyc

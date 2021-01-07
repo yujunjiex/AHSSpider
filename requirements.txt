@@ -8,7 +8,7 @@ PyYAML == 5.1.2
 jsonpath == 0.82
 
 # AHS\Tools\tools.py: 9
-lxml == 3.7.2
+lxml == 4.6.2
 
 # AHS\Tools\excel_merge_tool.py: 3
 # AHS\Tools\export_to_excel.py: 4

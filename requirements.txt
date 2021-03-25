@@ -2,7 +2,7 @@
 # https://github.com/damnever/pigar
 
 # AHS\loggers\core_logger.py: 4
-PyYAML == 5.1.2
+PyYAML == 5.4
 
 # AHS\main_spider.py: 4
 jsonpath == 0.82
